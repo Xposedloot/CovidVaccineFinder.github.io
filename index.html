@@ -50,6 +50,7 @@
   border-radius: 50%;
   border:none;
   color:#2C3A47;
+  outline: 0;
 }
 
 .search-box input{
@@ -96,6 +97,7 @@
     width: 480px;
 }
 
+
 </style>
 </head>
 
@@ -126,20 +128,10 @@
         </table>
     </div></div>
 <script>
-        // var date = new Date();
-        // var today = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
         var formatted_date = '';
         function getDate(selected_date){
             formatted_date = moment(selected_date).format("DD-MM-YYYY")
         }
-        // var jsDate = $('#datepicker').datepicker('getDate');
-        // if (jsDate !== null) { // if any date selected in datepicker
-        //     jsDate instanceof Date; // -> true
-        //     jsDate.getDate();
-        //     jsDate.getMonth();
-        //     jsDate.getFullYear();
-        // }            
-
         $("#searchbtn").click(function () {
             var pin = $('#pin').val();
             if (pin == '' || pin == undefined) {
@@ -152,12 +144,13 @@
                     if (status) {
                         var sessions = data.sessions ? data.sessions : [];
                         if (sessions) {
+                            $('#session tbody').empty();
                             for (var i = 0; i < sessions.length; i++) {
                                 var classname = "btn-primary";
                                 if (i % 2 == 0) {
                                     classname = "btn-primary"
                                 }
-                                $('#session tbody').empty().append("<tr><td>" + sessions[i]
+                                $('#session tbody').append("<tr><td>" + sessions[i]
                                     .name + "</td><td>" + sessions[i].date + "</td><td>" + sessions[i].available_capacity + "</td><td>" +
         sessions[i].available_capacity_dose1 + "</td><td>" +sessions[i].fee_type + "</td><td>" +sessions[i].vaccine + "</td><td><a class=" + classname + " href='https://selfregistration.cowin.gov.in/'>Book Slot</a></td></tr>")
                             }
