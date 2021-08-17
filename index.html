@@ -97,6 +97,129 @@
     width: 480px;
 }
 
+/****** LOADER CSS *******/
+.table-box.display {
+    visibility: visible;
+}
+
+#tablebox {
+    visibility: hidden;
+    display: none;
+}
+
+#tablebox.display {
+    visibility: visible;
+    display: contents;
+}
+/* 
+#loading {
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #9c41f2;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+#loading.display {
+    visibility: visible;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */
+/****** END LOADER CSS *******/
+#loading {
+  color: #ffffff;
+  font-size: 80px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  visibility: hidden;
+}
+#loading.display {
+    visibility: visible;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
 
 </style>
 </head>
@@ -111,7 +234,7 @@
         </div></div>
     </div>
         <div class="container table-responsive text-nowrap">
-        <table class="table table-dark table-striped" id="session">
+        <table class="table table-dark table-striped table-box" id="session">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -123,11 +246,13 @@
                     <th scope="col">Book Slot</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tablebox">
             </tbody>
         </table>
+        <div id="loading"></div>
     </div></div>
 <script>
+
         var formatted_date = '';
         function getDate(selected_date){
             formatted_date = moment(selected_date).format("DD-MM-YYYY")
@@ -155,13 +280,44 @@
         sessions[i].available_capacity_dose1 + "</td><td>" +sessions[i].fee_type + "</td><td>" +sessions[i].vaccine + "</td><td><a class=" + classname + " href='https://selfregistration.cowin.gov.in/'>Book Slot</a></td></tr>")
                             }
                         }
-                    } else {
+                        setTimeout(sessions, 5100);
+                    } 
+                    
+                    else {
                         alert('error');
                     }
 
                 });
-        });
+                
+             });
 
+        
+/********** LOADING ***********/
+
+const textInput = document.querySelector("#pin");
+const btn = document.querySelector("#searchbtn");
+
+btn.addEventListener("click", fetchHandler);
+const loader = document.querySelector("#loading");
+const tablebox = document.querySelector("#tablebox");
+
+function displayLoading() {
+    loader.classList.add("display");
+    setTimeout(() => {
+        loader.classList.remove("display");
+        tablebox.classList.add("display");
+    }, 5000);
+}
+function hideLoading() {
+    loader.classList.remove("display");
+}
+
+
+function fetchHandler(event) {
+    displayLoading()
+}
+
+/********** END LOADING ***********/
     
 </script>
 </body>
