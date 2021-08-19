@@ -77,30 +77,36 @@
    text-align: center;
 }
 
-.search-box button:hover{
+.search-box:hover{
    cursor: Text;
 }
 
-.search-box:hover .text {
+.search-box .text {
   width:240px;
   text-align: center;
   padding-right: 10px;
+  color: #fff;
 }
 
-.search-box:hover .text::placeholder {
+.search-box .text::placeholder {
     color: #fff;
     padding-right: 10px;
 }
 
 .input-box input:focus
 {
-    width: 480px;
+    width: 240px;
+}
+table.dataTable tbody tr {
+    background-color: #212529 !important;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, 
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing,
+ .dataTables_wrapper .dataTables_paginate {
+    color: #fff !important;
 }
 
 /****** LOADER CSS *******/
-.table-box.display {
-    visibility: visible;
-}
 
 #tablebox {
     visibility: hidden;
@@ -111,29 +117,6 @@
     visibility: visible;
     display: contents;
 }
-/* 
-#loading {
-    width: 2rem;
-    height: 2rem;
-    border: 5px solid #f3f3f3;
-    border-top: 6px solid #9c41f2;
-    border-radius: 100%;
-    margin: auto;
-    visibility: hidden;
-    animation: spin 1s infinite linear;
-}
-#loading.display {
-    visibility: visible;
-}
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-} */
-/****** END LOADER CSS *******/
 #loading {
   color: #ffffff;
   font-size: 80px;
@@ -218,6 +201,8 @@
     transform: rotate(360deg);
   }
 }
+
+/****** END LOADER CSS *******/
 
 
 
